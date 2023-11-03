@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="btn-back" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="i-title">Publicaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <h1 class="i-title">Publicaciones</h1>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card *ngFor="let partido of partidos$ | async">
+    <ion-card-header>
+      <ion-card-title>{{partido.nameGame}}</ion-card-title>
+      <ion-card-subtitle> {{partido.ubicacion}} </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Partido: {{partido.cantPlayers}} - Cancha de {{partido.nameCancha}} - Horario: {{partido.date}}
+    </ion-card-content>
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button color="danger" shape="round" size="small" (click)="registrarUsuario(partido,'p1')" [disabled]="partido.p1 !== 'N/A'">{{partido.p1}}</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button color="tertiary" shape="round" size="small" (click)="registrarUsuario(partido,'p2')" [disabled]="partido.p2 !== 'N/A'">{{partido.p2}}</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="partido.cantPlayers === 'Double'">
+        <ion-col size="6">
+          <ion-button color="danger" shape="round" size="small" (click)="registrarUsuario(partido,'p3')" [disabled]="partido.p3 !== 'N/A'">{{partido.p3}}</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button color="tertiary" shape="round" size="small" (click)="registrarUsuario(partido,'p4')" [disabled]="partido.p4 !== 'N/A'">{{partido.p4}}</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-card><br>
+</ion-content>

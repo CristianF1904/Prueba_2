@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="btn-back" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="i-title">Crear Partido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="fmGame">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-input formControlName="nameGame" label="Nombre del Partido:" placeholder="Partido Wimbledon"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <br>
+        <h3 class="i-title">Jugadores</h3>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col><ion-toggle (click)="togglePlayers('S')" [ngModelOptions]="{ standalone: true }" [(ngModel)]="toggleS" name="toggleS" aria-label="Success toggle" color="success">Single</ion-toggle></ion-col>
+        <ion-col><ion-toggle (click)="togglePlayers('D')" [ngModelOptions]="{ standalone: true }" [(ngModel)]="toggleD" name="toggleD" aria-label="Success toggle" color="success">Double</ion-toggle></ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+        <h3 class="i-title">Tipo de Cancha</h3>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="5"><ion-toggle (click)="toggleCanchas('AC')" [ngModelOptions]="{ standalone: true }" [(ngModel)]="toggleAC" name="toggleAC" aria-label="Success toggle" color="warning">Arcilla</ion-toggle></ion-col>
+        <ion-col size="5"><ion-toggle (click)="toggleCanchas('AF')" [ngModelOptions]="{ standalone: true }" [(ngModel)]="toggleAF" name="toggleAF" aria-label="Success toggle" color="primary">Asfalto</ion-toggle></ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+      <!-- Descripción de cancha y jugadores-->
+      <ion-row>
+        <ion-col>
+          <div class="container-cancha">
+            <img  #imgCancha class="cancha" src="https://i.ibb.co/99LdTZs/clay-tennis-court-tactics-board-vector.jpg">
+            <span class="ficha1" *ngIf="ocultarS1ficha"><img src="https://i.ibb.co/7WN0vg5/circulo-red.png" alt=""></span>
+            <span class="ficha2" ><img src="https://i.ibb.co/7WN0vg5/circulo-red.png" alt=""></span>
+            <span class="ficha3" *ngIf="ocultarS2ficha"><img src="https://i.ibb.co/CWNJzWN/circulo-blue.png" alt=""></span>
+            <span class="ficha4"><img src="https://i.ibb.co/CWNJzWN/circulo-blue.png" alt=""></span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-input formControlName="ubicacion" label="Ubicación: " placeholder="Av. Vicuña Mackenna 4917"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <br>
+        <h3 class="i-title">Agendar Fecha y Hora: </h3>
+      <div style="display: grid; justify-content: center;"> <!--COLOCARLO EN CSS sa-->
+            <ion-datetime formControlName="date" presentation="date-time" [preferWheel]="true"></ion-datetime>
+      </div>
+      <br>
+      <br>
+      <div class="btns">
+        <ion-button class="btn-cancelar" shape="round" fill="solid" size="medium">
+          Cancelar
+        </ion-button>
+        <ion-button (click)="validarFm()" class="btn-aceptar" shape="circle" fill="solid" size="medium">
+          Aceptar
+        </ion-button>
+      </div>
+    </ion-grid>
+  </form>
+</ion-content>

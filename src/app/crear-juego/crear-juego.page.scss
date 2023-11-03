@@ -1,0 +1,110 @@
+/*Etiquetas ion*/
+.i-title{
+  text-align: center;
+  justify-content: center;
+}
+
+/*btn-back*/
+.btn-back{
+  color: black;
+}
+
+
+/*Checkbox*/
+ion-radio::part(container) {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+ion-radio::part(mark) {
+  background: none;
+  transition: none;
+  transform: none;
+  border-radius: 0;
+}
+
+ion-radio.radio-checked::part(container) {
+  background: #6815ec;
+  border-color: transparent;
+}
+
+ion-radio.radio-checked::part(mark) {
+  width: 6px;
+  height: 10px;
+
+  border-width: 0px 2px 2px 0px;
+  border-style: solid;
+  border-color: #fff;
+
+  transform: rotate(45deg);
+}
+
+/*container-cancha*/
+.container-cancha{
+  padding-top: 16px;
+  position: relative;
+}
+
+.cancha{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+/*Tipos de canchas*/
+.container-rg{
+  position: relative;
+}
+
+.rg-canchas{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 34px;
+}
+
+/*Jugadores representados en fichas*/
+
+.ficha1,
+.ficha2,
+.ficha3,
+.ficha4 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: auto;
+}
+
+.ficha1{
+  top: 64%;
+  left: 36%;
+}
+
+.ficha2{
+  top: 38%;
+  left: 10%;
+}
+
+.ficha3{
+  top: 38%;
+  left: 64%;
+}
+
+.ficha4{
+  top: 64%;
+  left: 88%;
+}
+
+/*CALENDARIO DE FECHA*/
+
+/*  */
+
+.btns{
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-cancelar .btn-aceptar{
+  position: relative;
+}

@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+  <ion-card id="card-principal">
+    <form class="formulario-ingreso" [formGroup]="formLog">
+      <ion-input id="email" type="email" label="Correo:" placeholder="Correo@gmail.com" formControlName="email"></ion-input>
+      <ion-input id="password" type="Password" label="Contraseña:" placeholder="**********" formControlName="password"></ion-input>
+    </form>
+    <div class="button-container">
+      <!--HOLA SUUU-->
+      <ion-button shape="round" size="medium" color="warning" routerLink="/crear-usuario">Registrarse</ion-button>
+      <ion-button shape="round" size="medium" color="danger" (click)="onSubmit()">Ingresar</ion-button>
+    </div>
+  </ion-card>
+</ion-content>

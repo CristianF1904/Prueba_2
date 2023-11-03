@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <div class="container-home">
+          <ion-img src="https://i.ibb.co/5MbJGts/versus-tennis.png"></ion-img>
+          <ion-button class="btn-home" size="large" fill="clear"routerLink="/crear-juego">Crear Juego</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <div class="container-home">
+          <ion-img src="https://i.ibb.co/vHx3dKP/publico.png"></ion-img>
+          <ion-button class="btn-home" size="large" fill="clear" routerLink="/public-game">Juegos publicados</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <div class="container-home">
+          <ion-img src="https://i.ibb.co/7gdttpR/perfil.png"></ion-img>
+          <ion-button class="btn-home" size="large" fill="clear" routerLink="/perfil">Perfil</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button class="btn-cerrarSesion" (click)="onClick()" expand="block" fill="clear" shape="round">
+          Cerrar Sesión
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
