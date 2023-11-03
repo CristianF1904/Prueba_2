@@ -29,12 +29,12 @@ export class UsersService {
   //FireStore Metodos
 
   addUser(user: User){
-    const userRef = collection(this.firestore, 'Usuario');
+    const userRef = collection(this.firestore, 'users');
     return addDoc(userRef,user);
   }
 
   getEmails(): Observable<any[]>{
-    const userRef = collection(this.firestore, 'Usuario');
+    const userRef = collection(this.firestore, 'users');
     const queryj = query(userRef, where('email', '!=', null));
     const datos = collectionData(queryj, { idField: 'id' }) as Observable<any[]>;
     //console.log(datos);
