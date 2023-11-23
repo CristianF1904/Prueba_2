@@ -36,7 +36,6 @@ export class PublicGamePage implements OnInit {
         this.tipoPartido = 'Single';
       }
       return data;
-
     });
   }
 

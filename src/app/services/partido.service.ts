@@ -22,7 +22,7 @@ export class PartidoService {
 
   //Metodo para obtener los partidos en BD
   getGames(): Observable<any> {
-  return collectionData(collection(this.firestore, 'partido'));
+    return collectionData(collection(this.firestore, 'partido'));
   }
 
   //Metodo para agregar usuarios al partido

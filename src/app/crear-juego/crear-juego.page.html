@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button class="btn-back" defaultHref="/"></ion-back-button>
+      <ion-back-button class="btn-back" defaultHref="/home"></ion-back-button>
     </ion-buttons>
     <ion-title class="i-title">Crear Partido</ion-title>
   </ion-toolbar>
@@ -60,7 +60,7 @@
       <br>
       <br>
       <div class="btns">
-        <ion-button class="btn-cancelar" shape="round" fill="solid" size="medium">
+        <ion-button class="btn-cancelar" shape="round" fill="solid" size="medium" routerLink="/home">
           Cancelar
         </ion-button>
         <ion-button (click)="validarFm()" class="btn-aceptar" shape="circle" fill="solid" size="medium">

@@ -1,18 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button class="btn-back" defaultHref="/"></ion-back-button>
+      <ion-back-button class="btn-back" defaultHref="/home"></ion-back-button>
     </ion-buttons>
     <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card color="dark">
+  <ion-avatar class="avatar">
+    <img alt="Silhouette of a person's head" src="https://datepsychology.com/wp-content/uploads/2022/09/gigachad.jpg" />
+  </ion-avatar>
+  <ion-card color="dark" *ngIf="userData" class="card">
     <ion-card-header>
-      <ion-card-title>Vuelva pronto..</ion-card-title>
+      <ion-card-title class="cartaTitulo">{{userData.nombre}} {{userData.apellido}}</ion-card-title>
+      <ion-card-subtitle class="cartaSubtitulo" style="color: gray;">Jugador</ion-card-subtitle>
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col class="center-text"><b>Email</b></ion-col>
+          <ion-col class="center-text"><b>Edad</b></ion-col>
+          <ion-col class="center-text"><b>Telefono</b></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="center-text" style="color: gray;">{{userData.email}}</ion-col>
+          <ion-col class="center-text" style="color: gray;">{{userData.edad}}</ion-col>
+          <ion-col class="center-text" style="color: gray;">{{userData.telefono}}</ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col class="center-text"><ion-button shape="round">Seguir</ion-button></ion-col>
+          <ion-col class="center-text"><ion-button shape="round" fill="outline">Mensaje</ion-button></ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-header>
-
-    <ion-card-content>Pagina en Contruccion</ion-card-content>
   </ion-card>
 </ion-content>
